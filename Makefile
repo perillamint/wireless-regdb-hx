@@ -81,6 +81,14 @@ install-distro-key: maintainer-clean $(DISTRO_PRIVKEY)
 %.gz: %
 	gzip < $< > $@
 
+hxcrda.tar.gz: regulatory.bin
+	mkdir hxcrda
+	cp regulatory.bin hxcrda
+	cp regulatory.bin.5 hxcrda
+	cp `cat .custom` hxcrda
+	tar czvf hxcrda.tar.gz hxcrda
+	rm -rf hxcrda
+
 # Users should just do:
 #	sudo make install
 #
@@ -97,6 +105,9 @@ install-distro-key: maintainer-clean $(DISTRO_PRIVKEY)
 #	make maintainer-clean
 #	make
 #	sudo make install
+
+tarball: hxcrda.tar.gz
+
 install: regulatory.bin.5.gz
 	install -m 755 -d $(DESTDIR)/$(CRDA_PATH)
 	install -m 755 -d $(DESTDIR)/$(CRDA_KEY_PATH)
