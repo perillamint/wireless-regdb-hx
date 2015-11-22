@@ -1,3 +1,17 @@
+# WARNING!
+
+DO NOT USE THIS UNLESS YOU KNOW WHAT YOU ARE DOING
+
+It will add new HX region which does not define any limitaions.
+
+USE IT FOR TESTING PURPOSE ONLY!
+
+## Disclaimer
+Using a wifi device outside the ranges your local law defines could
+get your into trouble.
+
+# Description
+
 This repository contains the plain text version of the regulatory
 database file I maintain for use with Central Regulatory Database
 Agent daemon.  Also included is the compiled binary version of this
@@ -9,8 +23,7 @@ either expressed or implied.
 Also included are the tools used to compile and sign the regulatory.bin
 file as well as a MoinMoin macro used for viewing the database.
 
- TECHNICAL INFORMATION
-=======================
+# Technical information
 
 The regulatory information in `db.txt' is stored in a human-readable
 format which can be read using the `dbparse.py' python module. This
